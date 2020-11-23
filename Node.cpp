@@ -11,7 +11,7 @@ Node::Node(int userData) {
 }
 
 Node::~Node(){
-asdf
+
 }
 
 	/*

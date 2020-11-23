@@ -1,5 +1,6 @@
 #pragma once
 #include "NodeInterface.h"
+#include <cstddef>
 using namespace std;
 
 class  Node : public NodeInterface {

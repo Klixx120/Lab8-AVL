@@ -2,10 +2,10 @@
 
 #include "Node.h"
 
-Node::Node(int userData) {
-  data = userData;
-  Node* left = NULL;
-  Node* right = NULL;
+Node::Node() {
+  data = 0;
+  left = NULL;
+  right = NULL;
   height = 0;
 
 }

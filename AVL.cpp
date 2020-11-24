@@ -71,6 +71,27 @@ bool AVL::add(int data){
       return true;
     }
   }
+
+  // repeat for the right side
+  if (data > root->getData()){
+
+    // create new node called right and set to roots right
+    Node* right = root->getRightChild();
+
+    // if there is a right child,
+    //root beocomes right and add runs again
+    if (right != NULL){
+      root = right;
+      return add(data);
+    }
+
+    // if there is no more right children
+    // the data becomes the right child of the last node
+    else if (right == NULL){
+      right = new Node(data);
+      return true;
+    }
+  }
 }
 
 /*

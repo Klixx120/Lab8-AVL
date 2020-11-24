@@ -10,7 +10,19 @@ Node::Node() {
 
 }
 
+Node::Node(int userdata) {
+  data = userdata;
+  left = NULL;
+  right = NULL;
+  height = 0;
+
+}
+
 Node::~Node(){
+  delete left;
+  delete right;
+  left = NULL;
+  right = NULL;
 
 }
 
@@ -20,7 +32,7 @@ Node::~Node(){
 	* @return the data stored in this node.
 	*/
 int Node::getData() const{
-
+  return data;
 }
 
 	/*
@@ -29,7 +41,7 @@ int Node::getData() const{
 	* @return the left child of this node or null if empty left child.
 	*/
 Node* Node:: getLeftChild() const{
-
+ return left;
 }
 
 	/*
@@ -38,7 +50,7 @@ Node* Node:: getLeftChild() const{
 	* @return the right child of this node or null if empty right child.
 	*/
 Node* Node::getRightChild() const{
-
+  return right;
 }
 
 	/*
@@ -52,5 +64,5 @@ Node* Node::getRightChild() const{
 	* @return the height of this tree with this node as the local root.
 	*/
 int Node::getHeight(){
-
+  return height;
 }

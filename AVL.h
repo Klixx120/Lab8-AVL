@@ -8,10 +8,14 @@
 using namespace std;
 
 class AVL : public AVLInterface {
+
+private:
+  Node* root;
 public:
 	AVL() ;
 	~AVL() ;
 
+  int balance();
 	//Please note that the class that implements this interface must be made
 	//of objects which implement the Node
 

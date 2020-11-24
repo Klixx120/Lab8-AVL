@@ -1,12 +1,22 @@
+
+
+
 #include "AVL.h"
 
-AVL::AVL(){
 
+AVL::AVL(){
+  root = NULL;
 }
 AVL::~AVL(){
-
+  delete root;
+  root = NULL;
 }
 
+int AVL::balance(){
+  int balanceNum = 0;
+
+  return balanceNum;
+}
 //Please note that the class that implements this interface must be made
 //of objects which implement the Node
 
@@ -15,9 +25,9 @@ AVL::~AVL(){
 *
 * @return the root node for this tree.
 */
- Node * AVL::getRootNode() const{
-
- }
+Node * AVL::getRootNode() const{
+  return root;
+}
 
 /*
 * Attempts to add the given int to the AVL tree
@@ -26,9 +36,42 @@ AVL::~AVL(){
 * @return true if added
 * @return false if unsuccessful (i.e. the int is already in tree)
 */
- bool AVL::add(int data){
+bool AVL::add(int data){
 
- }
+  // If root does not exist, create new root node
+  //with the data
+  if (root == NULL){
+    root = new Node(data);
+    return true;
+  }
+
+  // If the root data is equal to given data, return False
+  if (root->getData() == data){
+    return false;
+  }
+
+  // If data is less than the root's data,
+  // move to the left child
+  if (data < root->getData()){
+
+    // create new node called left and set to roots left
+    Node* left = root->getLeftChild();
+
+    // if there is a left child,
+    //root beocomes left and add runs again
+    if (left != NULL){
+      root = left;
+      return add(data);
+    }
+
+    // if there is no more left children
+    // the data becomes the left child of the last node
+    else if (left == NULL){
+      left = new Node(data);
+      return true;
+    }
+  }
+}
 
 /*
 * Attempts to remove the given int from the AVL tree
@@ -37,13 +80,13 @@ AVL::~AVL(){
 * @return true if successfully removed
 * @return false if remove is unsuccessful(i.e. the int is not in the tree)
 */
- bool AVL::remove(int data){
+bool AVL::remove(int data){
 
- }
+}
 
 /*
 * Removes all nodes from the tree, resulting in an empty tree.
 */
- void AVL::clear(){
+void AVL::clear(){
 
- }
+}

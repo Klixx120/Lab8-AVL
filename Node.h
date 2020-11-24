@@ -12,6 +12,7 @@ private:
 
 public:
 	Node();
+  Node(int userdata);
 	~ Node();
 
 	/*

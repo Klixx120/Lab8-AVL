@@ -96,6 +96,9 @@ bool AVL::add(int data){
       return true;
     }
   }
+
+  // Adjust height of ancestor node
+   root->setHeight(1 + max(root->getLeftChild()->getHeight(), root->getRightChild()->getHeight()));
 }
 
 /*

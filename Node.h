@@ -47,4 +47,5 @@ public:
 	* @return the height of this tree with this node as the local root.
 	*/
 	  int getHeight();
+    void setHeight(int newHeight);
 };

@@ -12,6 +12,10 @@ AVL::~AVL(){
   root = NULL;
 }
 
+int max(int a, int b) {
+    return (a > b)? a : b;
+}
+
 int AVL::balance(){
   int balanceNum = 0;
 

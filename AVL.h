@@ -16,6 +16,7 @@ public:
 	~AVL() ;
 
   int balance();
+  int max(int a, int b);
 	//Please note that the class that implements this interface must be made
 	//of objects which implement the Node
 
